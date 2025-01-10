@@ -13,16 +13,16 @@ export default function Products({ products }) {
                     {products &&
                         products.map((product) => {
                             return (
-                                <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-100 ">
+                                <div className="rounded-lg bg-white p-2 ">
                                     <div className="h-56 w-full">
                                         <a href="#">
                                             <img
-                                                className="mx-auto h-full dark:hidden"
+                                                className="mx-auto h-full  dark:hidden"
                                                 src={product.productImage}
                                                 alt=""
                                             />
                                             <img
-                                                className="mx-auto hidden h-full dark:block"
+                                                className="mx-auto hidden h-full object-cover w-full  dark:block"
                                                 src={product.productImage}
                                                 alt=""
                                             />
