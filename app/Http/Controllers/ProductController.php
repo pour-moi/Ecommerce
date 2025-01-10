@@ -43,7 +43,7 @@ class ProductController extends Controller
             'productPrice' => 'required|int',
             'productDescription' => 'required|string|max:500',
             'category_id' => 'required|exists:categories,id',
-            'productImage' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'productImage' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048'
         ]);
 
         if ($request->hasFile('productImage')) {
@@ -54,7 +54,7 @@ class ProductController extends Controller
 
         Product::create($validated);
 
-        return redirect('product.create');
+        return redirect('home');
     }
 
     /**
