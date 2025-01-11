@@ -29,7 +29,11 @@ Route::get("/category/{categoryName}", function($categoryName){
     ]);
 });
 
-Route::resource('/admin', ProductController::class);
+// Route::get("/product/{id}", function(){
+//     return Inertia::render('ProductDetail');
+// });
+
+Route::resource('/product', ProductController::class);
 
 
 Route::middleware('auth')->group(function () {
