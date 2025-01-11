@@ -63,8 +63,10 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        $relatedProduct = Product::where('category_id', $product->category_id)->where('id', '!=', $product->id)->get();
         return Inertia::render('ProductDetail', [
-            'product' => $product
+            'product' => $product,
+            'relatedProduct' => $relatedProduct
         ]);
     }
 
