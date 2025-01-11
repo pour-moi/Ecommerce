@@ -15,7 +15,7 @@ export default function Products({ products }) {
                             return (
                                 <div className="rounded-lg bg-white p-2 ">
                                     <div className="h-56 w-full">
-                                        <a href="#">
+                                        <a href={`/product/${product.id}`}>
                                             <img
                                                 className="mx-auto h-full  dark:hidden"
                                                 src={product.productImage}
