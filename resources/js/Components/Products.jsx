@@ -117,7 +117,7 @@ export default function Products({ products }) {
                                         </div>
 
                                         <a
-                                            href="#"
+                                            href={`/product/${product.id}`}
                                             className="text-lg font-semibold leading-tight text-gray-900 hover:underline text-black"
                                         >
                                             {product.productName}
