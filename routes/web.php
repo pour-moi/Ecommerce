@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 use Inertia\Inertia;
 
 // Route::get('/', function () {
@@ -34,6 +35,7 @@ Route::get("/category/{categoryName}", function($categoryName){
 // });
 
 Route::resource('/product', ProductController::class);
+Route::resource('/cart', CartController::class);
 
 
 Route::middleware('auth')->group(function () {
