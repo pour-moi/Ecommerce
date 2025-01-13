@@ -1,16 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class CartController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
         //
-      
+        $products_on_cart = $request->session()->get('cart');
+        $products = Product::whereIn('id', $products_on_cart)->get();
+
+        return Inertia::render('ShoppingCart',[
+            'product_id' => $products_on_cart,
+            'products' => $products
+        ]);
     }
 
     /**
