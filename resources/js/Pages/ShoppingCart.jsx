@@ -1,4 +1,9 @@
+import { router } from "@inertiajs/react";
 export default function ShoppingCart({ product_id, products }) {
+    const handleDelete = (e, id) => {
+        e.preventDefault();
+        router.delete(`/cart/${id}`);
+    };
     console.log(product_id);
     console.log(products);
     return (
@@ -144,6 +149,12 @@ export default function ShoppingCart({ product_id, products }) {
                                                         <button
                                                             type="button"
                                                             class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
+                                                            onClick={(e) =>
+                                                                handleDelete(
+                                                                    e,
+                                                                    product.id
+                                                                )
+                                                            }
                                                         >
                                                             <svg
                                                                 class="me-1.5 h-5 w-5"
