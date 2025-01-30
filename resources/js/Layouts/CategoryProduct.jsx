@@ -1,6 +1,6 @@
 export function CategoryProduct({ categories }) {
     return (
-        <section className="bg-white py-8 antialiased bg-white md:py-12">
+        <section className="py-8 antialiased bg-white md:py-12">
             <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
                 <div className="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">
                     <div>
@@ -118,7 +118,7 @@ export function CategoryProduct({ categories }) {
 
                                         <a
                                             href={`/product/${product.id}`}
-                                            className="text-lg font-semibold leading-tight text-gray-900 hover:underline text-black"
+                                            className="text-lg font-semibold leading-tight hover:underline text-black"
                                         >
                                             {product.productName}
                                         </a>
@@ -176,13 +176,13 @@ export function CategoryProduct({ categories }) {
                                                 </svg>
                                             </div>
 
-                                            <p className="text-sm font-medium text-gray-900 text-black">
+                                            <p className="text-sm font-medium text-black">
                                                 5.0
                                             </p>
                                         </div>
 
                                         <div className="mt-4 flex items-center justify-between gap-4">
-                                            <p className="text-2xl font-extrabold leading-tight text-gray-900 text-black">
+                                            <p className="text-2xl font-extrabold leading-tight text-black">
                                                 {product.productPrice} ETB
                                             </p>
 
@@ -215,14 +215,14 @@ export function CategoryProduct({ categories }) {
                             );
                         })}
                 </div>
-                <div className="w-full text-center">
+                {/* <div className="w-full text-center">
                     <button
                         type="button"
                         className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
                     >
                         Show more
                     </button>
-                </div>
+                </div> */}
             </div>
         </section>
     );
