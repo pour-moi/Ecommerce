@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Gate;
+
 
 class CartController extends Controller
 {
@@ -75,8 +77,16 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
+        $items = session()->pull('cart');
+        if(($key = array_search($id, $items)) !== false) {
+            unset($items[$key]);
+        }
+
+        session()->put('cart', $items);
+        return redirect('/cart');
+
     }
 }
