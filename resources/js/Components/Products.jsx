@@ -6,7 +6,7 @@ export default function Products({ products }) {
     };
 
     return (
-        <section className="bg-white py-8 antialiased bg-white md:py-12">
+        <section className="py-8 antialiased bg-white md:py-12">
             <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
                 <div className="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">
                     <div>
@@ -124,7 +124,7 @@ export default function Products({ products }) {
 
                                         <a
                                             href={`/product/${product.id}`}
-                                            className="text-lg font-semibold leading-tight text-gray-900 hover:underline text-black"
+                                            className="text-lg font-semibold leading-tight hover:underline text-black"
                                         >
                                             {product.productName}
                                         </a>
@@ -182,13 +182,13 @@ export default function Products({ products }) {
                                                 </svg>
                                             </div>
 
-                                            <p className="text-sm font-medium text-gray-900 text-black">
+                                            <p className="text-sm font-medium  text-black">
                                                 5.0
                                             </p>
                                         </div>
 
                                         <div className="mt-4 flex items-center justify-between gap-4">
-                                            <p className="text-2xl font-extrabold leading-tight text-gray-900 text-black">
+                                            <p className="text-2xl font-extrabold leading-tight  text-black">
                                                 {product.productPrice} ETB
                                             </p>
 
