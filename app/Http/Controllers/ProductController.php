@@ -14,11 +14,20 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $product = Product::all();
+        // $product = Product::all();
+        $electronics_product = Product::where('category_id', 1)->take(12)->get();
+        $groceries_product = Product::where('category_id', 4)->take(12)->get();
+        $furniture_product = Product::where('category_id', 5)->take(12)->get();
+        $cosmotics_product = Product::where('category_id', 3)->take(12)->get();
 
         return Inertia::render('HomePage', [
-            'product' => $product
+            // 'product' => $product,
+            'electronics_product' => $electronics_product,
+            'groceries_product' => $groceries_product,
+            'furniture_product' => $furniture_product,
+            'cosmotics_product' => $cosmotics_product,
         ]);
+      
     }
 
     /**
