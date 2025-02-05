@@ -1,7 +1,7 @@
 export default function NavBar() {
     return (
         <>
-            <header class="flex bg-white border-b py-3 sm:px-6 px-4  min-h-[75px] tracking-wide relative z-50">
+            <header class="fixed w-full flex bg-white border-b sm:px-6 top-0 min-h-[75px] tracking-wide z-50">
                 <div class="flex max-w-screen-xl mx-auto w-full">
                     <div class="flex flex-wrap items-center lg:gap-y-2 gap-4 w-full">
                         <a href="javascript:void(0)" class="max-sm:hidden">
