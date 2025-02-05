@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +25,12 @@ Route::get("/", function(){
     return Inertia::render('HomePage');
 })->name('home');
 
-Route::get("/category/{categoryName}", function($categoryName){
+Route::get("/category/{category_id}", function($category_id){
+
+    $related_product = Product::where('category_id', $category_id)->get();
+
     return Inertia::render('CategoryPage', [
-        'category' => $categoryName,
+        'related_product' => $related_product,
     ]);
 });
 
