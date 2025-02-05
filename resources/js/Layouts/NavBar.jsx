@@ -71,7 +71,7 @@ export default function NavBar() {
                                 </li>
                                 <li class="max-lg:border-b max-lg:py-3 px-3">
                                     <a
-                                        href="/category/electronics"
+                                        href="/category/1"
                                         class="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
                                     >
                                         Electronics
@@ -79,7 +79,7 @@ export default function NavBar() {
                                 </li>
                                 <li class="max-lg:border-b max-lg:py-3 px-3">
                                     <a
-                                        href="/category/groceries"
+                                        href="/category/4"
                                         class="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
                                     >
                                         Groceries
@@ -87,7 +87,7 @@ export default function NavBar() {
                                 </li>
                                 <li class="max-lg:border-b max-lg:py-3 px-3">
                                     <a
-                                        href="/category/furniture"
+                                        href="/category/5"
                                         class="text-[#333] hover:text-[#007bff] text-[15px] block font-semibold"
                                     >
                                         Furniture
