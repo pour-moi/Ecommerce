@@ -175,7 +175,7 @@ export default function CategoryPage({ related_product }) {
             <div class="p-4 sm:ml-64 mt-20">
                 <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                     {related_product &&
-                        related_product.map((product) => {
+                        related_product.data.map((product) => {
                             return (
                                 <div className="rounded-lg bg-white p-2 ">
                                     <div className="h-56 w-full">
