@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 // Route::get('/', function () {
@@ -27,12 +28,23 @@ Route::get("/", function(){
 
 Route::get("/category/{category_id}", function($category_id){
 
-    $related_product = Product::where('category_id', $category_id)->get();
+    $related_product = Product::where('category_id', $category_id)->paginate(10)->toArray();
+    // dd($related_product);
 
     return Inertia::render('CategoryPage', [
         'related_product' => $related_product,
     ]);
-});
+})->name("paginate");
+
+Route::post("/search", function(Request $request){
+    $query = $request->input('product');
+
+    $find_product = Product::where('productName', 'LIKE', "%{$query}%")->get();
+
+    return Inertia::render("SearchPage",[
+        'products' => $find_product,
+    ]);
+})->name("search");
 
 // Route::get("/product/{id}", function(){
 //     return Inertia::render('ProductDetail');
