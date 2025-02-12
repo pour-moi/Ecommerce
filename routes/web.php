@@ -28,7 +28,7 @@ Route::get("/", function(){
 
 Route::get("/category/{category_id}", function($category_id){
 
-    $related_product = Product::where('category_id', $category_id)->paginate(10)->toArray();
+    $related_product = Product::where('category_id', $category_id)->paginate(12)->toArray();
     // dd($related_product);
 
     return Inertia::render('CategoryPage', [
