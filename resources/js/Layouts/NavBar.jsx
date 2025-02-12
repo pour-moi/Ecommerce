@@ -1,4 +1,14 @@
+import { useForm } from "@inertiajs/react";
 export default function NavBar() {
+    const { data, setData, post } = useForm({
+        product: "",
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+        post(route("search"));
+    };
+
     return (
         <>
             <header class="fixed w-full flex bg-white border-b sm:px-6 top-0 min-h-[75px] tracking-wide z-50">
@@ -98,11 +108,18 @@ export default function NavBar() {
 
                         <div class="flex items-center gap-x-6 gap-y-4 ml-auto">
                             <div class="flex bg-gray-50 border focus-within:bg-transparent focus-within:border-gray-400 rounded-full px-4 py-px overflow-hidden max-w-52 max-lg:hidden">
-                                <input
-                                    type="text"
-                                    placeholder="Search something..."
-                                    class="w-full text-sm bg-transparent outline-none border-none focus-within:border-none pr-2"
-                                />
+                                <form action="" onSubmit={submit}>
+                                    <input
+                                        value={data.product}
+                                        type="text"
+                                        placeholder="Search something..."
+                                        class="w-full text-sm bg-transparent outline-none border-none focus-within:border-none pr-2"
+                                        onChange={(e) =>
+                                            setData("product", e.target.value)
+                                        }
+                                    />
+                                </form>
+
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 192.904 192.904"
